@@ -84,7 +84,7 @@ class MyHomePage extends ConsumerWidget {
               'You have pushed the button this many times:',
             ),
             Text(
-              '${ref.watch(counterProvider)}',
+              '${ref.watch(counterDisplayProvider)}',
               style: Theme.of(context).textTheme.headline4,
             ),
           ],
@@ -98,5 +98,7 @@ class MyHomePage extends ConsumerWidget {
     );
   }
 }
+
+final counterDisplayProvider = Provider((ref) => ref.watch(counterProvider));
 
 final counterProvider = StateProvider((ref) => 0);
